@@ -27,7 +27,6 @@ final class ProfileView: UIView {
         tableView.register(SettingCell.self, forCellReuseIdentifier: "settingCell")
         tableView.register(ReferenceCell.self, forCellReuseIdentifier: "referenceCell")
         tableView.register(DeleteAccCell.self, forCellReuseIdentifier: "deleteAccCell")
-
     }
     
     required init?(coder: NSCoder) {

@@ -11,7 +11,7 @@ final class AllViewCell: UITableViewCell {
     
     let cellView = UIView()
     let titleLabel = UILabel()
-    let thumbnailImageView = UIImageView()
+    let shopImageView = UIImageView()
     let resultLabel = UILabel()
     let imageNext = UIImageView()
     
@@ -20,8 +20,7 @@ final class AllViewCell: UITableViewCell {
         
         addSubview(cellView)
         cellView.addSubview(titleLabel)
-        cellView.addSubview(thumbnailImageView)
-        cellView.addSubview(resultLabel)
+        cellView.addSubview(shopImageView)
         cellView.addSubview(imageNext)
         
         setupConstraints()
@@ -34,35 +33,36 @@ final class AllViewCell: UITableViewCell {
     
     private func setupConstraints() {
         cellView.translatesAutoresizingMaskIntoConstraints = false
-        cellView.backgroundColor = .red
-        cellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-        cellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
+        cellView.backgroundColor = .orange
+        cellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+        cellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         cellView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        cellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
+        cellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        cellView.backgroundColor = .systemGray6
+        cellView.layer.cornerRadius = 10
         
-        titleLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 21).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 10).isActive = true
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 0).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: shopImageView.trailingAnchor, constant: 10).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: imageNext.leadingAnchor, constant: -10).isActive = true
         
-        thumbnailImageView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 9).isActive = true
-        thumbnailImageView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 15).isActive = true
-        thumbnailImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        thumbnailImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        shopImageView.translatesAutoresizingMaskIntoConstraints = false
+        shopImageView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 0).isActive = true
+        shopImageView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 15).isActive = true
+        shopImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        shopImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        resultLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
-        resultLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 10).isActive = true
-        resultLabel.trailingAnchor.constraint(equalTo: imageNext.leadingAnchor, constant: -10).isActive = true
-        
+        imageNext.translatesAutoresizingMaskIntoConstraints = false
         imageNext.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
         imageNext.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -10).isActive = true
-        imageNext.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        imageNext.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        imageNext.setConstraint(from: .height, from: self, 15)
+        imageNext.setConstraint(from: .width, from: self, 10)
         
     }
     
     private func configureUI() {
-        resultLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
-        thumbnailImageView.layer.cornerRadius = 30
-        thumbnailImageView.backgroundColor = .rgb(255, 206, 50)
+        resultLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        shopImageView.layer.cornerRadius = 8
+        shopImageView.backgroundColor = .rgb(255, 206, 50)
     }
 }

@@ -171,14 +171,21 @@ final class HomePresenter: HomeViewPresenterable {
                                                                            animated: true)
             
         case .story:
-            // story uchun oynaga o'tadigan funksiya
             break
         case .market:
-            // market uchun oynaga o'tadigan funksiya
-            break
+            let selectedMarket = model.market[indexPath.row]
+            
+            let marketDetailVC = SelectViewController()
+            marketDetailVC.marketData = selectedMarket
+            viewController?.navigationController?.pushViewController(
+                SelectViewController(), animated: true)
         case .shop:
-            // shop uchun oynaga o'tadigan funksiya
-            break
+            let selectedShop = model.shop[indexPath.row]
+            
+            let shopDetailVC = SelectViewController()
+            shopDetailVC.shopData = selectedShop
+            viewController?.navigationController?.pushViewController(
+                SelectViewController(), animated: true)
         }
         
         guard collectionView.cellForItem(at: indexPath) != nil else { return }

@@ -19,15 +19,15 @@ final class ProfilePresenter: ProfileViewPresenterable {
         switch sectionType {
             
         case .information:
-            return 1
+            return 2
         case .cartAdress:
-            return 2
-        case .setting:
-            return 1
-        case .reference:
             return 3
-        case .deleteAcc:
+        case .setting:
             return 2
+        case .reference:
+            return 4
+        case .deleteAcc:
+            return 3
         }
     }
     
@@ -43,7 +43,20 @@ final class ProfilePresenter: ProfileViewPresenterable {
                 return UITableViewCell()
                 
             }
-                        
+            
+            if indexPath.row == 0 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Azizbek Musurmonov"
+                cell.numberLabel.text = "+998883825004"
+                cell.nextImageView.image = UIImage(named: "next")
+            } else {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Bonus hisobi"
+                
+            }
+            
             return cell
         case .cartAdress:
             guard let cell = tableView.dequeueReusableCell(
@@ -53,10 +66,25 @@ final class ProfilePresenter: ProfileViewPresenterable {
                 return UITableViewCell()
                 
             }
-            
-            cell.backgroundColor = .orange
-                        
+            if indexPath.row == 0 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.titleHeaderLabel.text = "To'lov va manzillar"
+            } else if indexPath.row == 1 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "To'lov kartalari"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.cardImageView.image = UIImage(named: "ic_payment_cards")
+            } else {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Mening manzillarim"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.cardImageView.image = UIImage(named: "ic_location")
+            }
             return cell
+            
         case .setting:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "settingCell",
@@ -65,7 +93,17 @@ final class ProfilePresenter: ProfileViewPresenterable {
                 return UITableViewCell()
                 
             }
-                        
+            if indexPath.row == 0 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.titleHeaderLabel.text = "Sozlamalar"
+            } else {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Til"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.languageImageView.image = UIImage(named: "ic_languages")
+            }
             return cell
         case .reference:
             guard let cell = tableView.dequeueReusableCell(
@@ -74,6 +112,33 @@ final class ProfilePresenter: ProfileViewPresenterable {
             ) as? ReferenceCell else {
                 return UITableViewCell()
                 
+            }
+            if indexPath.row == 0 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.titleHeaderLabel.text = "Ma'lumot"
+            } else if indexPath.row == 1 {
+                
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Bildirishnomalar"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.titleImageView.image = UIImage(named: "ic_notification")
+                
+            } else if indexPath.row == 2 {
+                
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Yordam xizmati"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.titleImageView.image = UIImage(named: "ic_support_service")
+                
+            } else {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Foydalanish shartlari"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.titleImageView.image = UIImage(named: "ic_user_agreement")
             }
                         
             return cell
@@ -84,6 +149,24 @@ final class ProfilePresenter: ProfileViewPresenterable {
             ) as? DeleteAccCell else {
                 return UITableViewCell()
                 
+            }
+            
+            if indexPath.row == 0 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Chiqish"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.titleImageView.image = UIImage(named: "ic_logout")
+            } else if indexPath.row == 1 {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.nameLabel.text = "Akkountni o'chirish"
+                cell.nextImageView.image = UIImage(named: "next")
+                cell.titleImageView.image = UIImage(named: "ic_account_deletion")
+            } else {
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                cell.titleVersion.text = "Versiya 2.7.0"
             }
                         
             return cell

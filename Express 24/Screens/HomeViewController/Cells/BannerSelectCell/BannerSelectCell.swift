@@ -14,7 +14,7 @@ final class BannerSelectCell: UICollectionViewCell {
     var contentLabel = UILabel()
     let likeButton = UIButton()
     
-    let ratingView = ImageTitleView(imageName: "ic_star_20", titleName: "4.8(500)+")
+    let ratingView = ImageTitleView(imageName: "ic_rating", titleName: "4.8(500)+")
     let carView = ImageTitleView(imageName: "ic_courier_20", titleName: "Bepul")
 
     var isLiked = false

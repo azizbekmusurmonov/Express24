@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TabBarItemData(image: isSelectTabBar ? "ic_search_yellow" : "ic_new_search",
                            title: "Izlash", type: SearchVC()),
             TabBarItemData(image: isSelectTabBar ? "ic_busket_yellow" : "ic_busket", 
-                           title: "Savat", type: BasketView()),
+                           title: "Savat", type: BasketVC()),
             TabBarItemData(image: isSelectTabBar ? "ic_orders_yellow" : "ic_orders",
                            title: "Buyurtmalar", type: OrdersVC()),
             TabBarItemData(image: isSelectTabBar ? "ic_user_yellow" : "ic_user",

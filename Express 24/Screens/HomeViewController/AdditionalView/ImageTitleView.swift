@@ -20,8 +20,8 @@ final class ImageTitleView: UIStackView {
         image.image = .init(named: imageName)
         image.tintColor = .black
         
-        image.setConstraint(from: .width, from: self, 30)
-        image.setConstraint(from: .height, from: self, 30)
+        image.setConstraint(from: .width, from: self, 15)
+        image.setConstraint(from: .height, from: self, 15)
         addArrangedSubview(image)
         addArrangedSubview(label)
         

@@ -68,7 +68,6 @@ extension SearchView {
         
         addSubview(all)
         
-        all.isHidden = true
         all.translatesAutoresizingMaskIntoConstraints = false
         
         all.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true

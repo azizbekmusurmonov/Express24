@@ -13,8 +13,10 @@ final class BannerSelectView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.register(BannerSelectCell.self, forCellWithReuseIdentifier: "bannerSelectCell")
+        collectionView.register(UICollectionViewCell.self, 
+                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(BannerSelectCell.self,
+                                forCellWithReuseIdentifier: "bannerSelectCell")
         collectionView.register(HomeSectionHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "HomeBalanceReusableView")

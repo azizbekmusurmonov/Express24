@@ -58,7 +58,6 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         presenter.cellForRaw(collectionView: collectionView, at: indexPath)
-        
     }
     
     //MARK: header setUp
@@ -84,7 +83,9 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
     }
     
     func scrollToItem(at indexPath: IndexPath) {
-        mainView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        mainView.collectionView.scrollToItem(at: indexPath, 
+                                             at: .centeredHorizontally,
+                                             animated: true)
     }
 }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="27px" viewBox="0 0 25 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 0.000000)">
+            <g id="ic_notifications" transform="translate(0.000000, 3.000000)" stroke="#1A1A18" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                <path d="M8.3334,20.334 C8.3334,21.8067 9.5273,23.0006 11,23.0006 C12.4728,23.0006 13.6667,21.8067 13.6667,20.334 L8.3334,20.334 Z M19,8.334 C19,10.5562 19,12.7784 19,15.0007 C19,17.6673 19.8889,19.4451 21.6667,20.334 L0.33337,20.334 C2.11115,19.4451 3.00004,17.6673 3.00004,15.0007 C3.00004,12.7784 3.00004,10.5562 3.00004,8.334 C3.00004,3.91571 6.5818,0.33398 11,0.33398 C15.4183,0.33398 19,3.91571 19,8.334 Z" id="Shape"></path>
+            </g>
+            <g id="Ellipse-5" transform="translate(14.000000, 0.000000)" fill="#FF4D4F" fill-rule="nonzero">
+                <circle id="Oval" cx="5" cy="5" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

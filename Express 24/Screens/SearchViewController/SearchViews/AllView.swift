@@ -24,14 +24,15 @@ final class AllView: UIView {
     }
     
     private func setupTableView() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(AllViewCell.self, forCellReuseIdentifier: "allViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
     }
     
     private func setupConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -43,24 +44,21 @@ extension AllView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 10 }
     
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat { return 90 }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier:  "allViewCell",
                                                        for: indexPath) as? AllViewCell else {
             return UITableViewCell()
         }
         
+        cell.selectionStyle = .none
         cell.isUserInteractionEnabled = true
-        
-        if indexPath.row == 0 {
-            cell.titleLabel.text = "Все объявления"
-            // cell.resultLabel.text = "634123 результатов"
-        } else {
-            cell.thumbnailImageView.image = UIImage(named: "kalyaska")
-            cell.titleLabel.text = "Детский мир"
-            // cell.resultLabel.text = "44123 результатов"
-            // cell.imageNext.image = UIImage(named: "next")
-        }
-        
+        cell.titleLabel.text = "Oshxona"
+        cell.shopImageView.image = UIImage(named: "")
+        cell.imageNext.image = UIImage(named: "next")
+       
         return cell
     }
 }
