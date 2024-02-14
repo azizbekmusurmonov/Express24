@@ -18,9 +18,11 @@ protocol BannerSelectViewPresenterable: AnyObject {
                                            at indexPath: IndexPath
     ) -> UICollectionReusableView
     func didSelectItem(_ collectionView: UICollectionView, at indexPath: IndexPath)
-}
+    }
 
 final class BannerSelectPresenter: BannerSelectViewPresenterable {
+    var viewController: BannerSelectViewController?
+
     
     var model: BannersModel = BannersModel(
         bannerSelect:  [
@@ -52,20 +54,7 @@ final class BannerSelectPresenter: BannerSelectViewPresenterable {
     )
     
     //MARK: - This is Cells Count
-    func numberOfItemsInSection(for section: Int) -> Int {
-        //guard let sectionType = SectionType(rawValue: section) else { return 0 }
-        
-        //switch sectionType {
-        //case .banner:
-            return model.bannerSelect.count
-//        //case .story:
-//            return 0
-//        case .market:
-//            return 0
-//        case .shop:
-//            return 0
-        //}
-    }
+    func numberOfItemsInSection(for section: Int) -> Int { return model.bannerSelect.count }
     
     //MARK: - Home Cells setUp
     func cellForRaw(collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,24 +71,48 @@ final class BannerSelectPresenter: BannerSelectViewPresenterable {
     
     //MARK: - CollectionView Button
     
-    
     func didSelectItem(_ collectionView: UICollectionView, at indexPath: IndexPath) {
-        guard collectionView.cellForItem(at: indexPath) != nil else { return }
-        if let selectedCell = collectionView.cellForItem(at: indexPath) {
-            UIView.animate(withDuration: 0.2, animations: {
-                
-                selectedCell.alpha = 0.8
-                
-            }) { _ in
-                UIView.animate(withDuration: 0.2) {
-                    selectedCell.transform = .identity
-                    selectedCell.alpha = 1.0
-                }
+        // Print indexPath to verify it
+        print("Did select item at indexPath: \(indexPath)")
+        
+        // Check if navigation controller is available
+        guard let navigationController = viewController?.navigationController else {
+            print("Navigation controller is nil")
+            return
+        }
+        
+        // Ensure the selected index path is within the collection view's bounds
+        guard indexPath.row < model.bannerSelect.count else {
+            print("Invalid index path")
+            return
+        }
+        
+        // Instantiate the SelectViewController properly
+        let marketDetailVC = SelectViewController() // Instantiate properly according to your app logic
+        
+        // Push the view controller to the navigation stack
+        navigationController.pushViewController(marketDetailVC, animated: true)
+        
+        // Ensure collectionView.cellForItem(at:) returns a cell before performing operations on it
+        guard let selectedCell = collectionView.cellForItem(at: indexPath) else {
+            print("Selected cell is nil")
+            return
+        }
+        
+        // Animate the selected cell
+        UIView.animate(withDuration: 0.2, animations: {
+            selectedCell.alpha = 0.8
+        }) { _ in
+            UIView.animate(withDuration: 0.2) {
+                selectedCell.transform = .identity
+                selectedCell.alpha = 1.0
             }
         }
         
-        print("CollectionView elementi \(indexPath.row) tanlandi.")
+        print("CollectionView element \(indexPath.row) was selected.")
     }
+
+
     
     //MARK: - Header SetUp
     func viewForSupplementaryElementOfKind(

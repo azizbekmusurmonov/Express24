@@ -39,6 +39,7 @@ final class OrdersView: UIView {
         segmentedControl.addTarget(self, 
                                    action: #selector(segmentedControlValueChanged(_:)), 
                                    for: .valueChanged)
+        displayViewController(index: 0)
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {

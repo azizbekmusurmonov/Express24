@@ -63,16 +63,12 @@ final class BannerSelectCell: UICollectionViewCell {
                                              constant: -10).isActive = true
         likeButton.topAnchor.constraint(equalTo: imageView.bottomAnchor,
                                         constant: 0).isActive = true
-        likeButton.backgroundColor = .white
-        likeButton.layer.cornerRadius = 24
-        likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), 
+        likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"),
                             for: .normal)
         likeButton.tintColor = isLiked ? .red : .black
         likeButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         likeButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         likeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        likeButton.layer.backgroundColor = UIColor.white.cgColor
-        likeButton.layer.cornerRadius = 24
         
         cellView.addSubview(ratingView)
         ratingView.translatesAutoresizingMaskIntoConstraints = false

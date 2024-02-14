@@ -20,7 +20,7 @@ final class CategoriesSelectCell: UICollectionViewCell {
         cellView.setConstraint(from: .top, from: contentView, 5)
         cellView.setConstraint(from: .bottom, from: contentView, -5)
         cellView.layer.cornerRadius = 10
-        cellView.backgroundColor = .systemGray6
+        cellView.backgroundColor = .systemGray4
     }
     
     required init?(coder: NSCoder) {

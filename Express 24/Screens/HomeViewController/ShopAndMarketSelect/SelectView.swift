@@ -19,13 +19,22 @@ final class SelectView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(BannerImageCell.self,
-                                 forCellWithReuseIdentifier: "bannerImageCell")
+                                forCellWithReuseIdentifier: "bannerImageCell")
         collectionView.register(OrderSelectCell.self,
-                                 forCellWithReuseIdentifier: "orderSelectCell")
+                                forCellWithReuseIdentifier: "orderSelectCell")
         collectionView.register(RaitingCell.self,
-                                 forCellWithReuseIdentifier: "raitingCell")
+                                forCellWithReuseIdentifier: "raitingCell")
         collectionView.register(CategoriesSelectCell.self,
-                                 forCellWithReuseIdentifier: "categoriesSelectCell")
+                                forCellWithReuseIdentifier: "categoriesSelectCell")
+        collectionView.register(
+            SelectHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "selectHeaderView")
+        collectionView.register(
+            UICollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: "footerView"
+        )
         
         return collectionView
     }()
@@ -33,14 +42,13 @@ final class SelectView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // collectionView ni setup qilish
         setupCollectionView()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setupCollectionView() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +57,7 @@ final class SelectView: UIView {
         collectionView.setConstraint(from: .right, from: self)
         collectionView.setConstraint(from: .bottom, from: self)
     }
-
+    
     private func createLayout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { (
             sectionIndex: Int,
@@ -62,41 +70,9 @@ final class SelectView: UIView {
             
             switch sectionType {
             case .banner:
-                let itemSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalHeight(1))
-                
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(
-                    widthDimension: .absolute(UIScreen.main.bounds.width ),
-                    heightDimension: .estimated(280))
-                
-                let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
-                    layoutSize: groupSize,
-                    subitems: [item])
-                
-                let section = NSCollectionLayoutSection(group: group)
-                
-                return section
+                return self.createBannerSection()
             case .order:
-                let itemSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalHeight(1))
-                
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(
-                    widthDimension: .absolute(UIScreen.main.bounds.width ),
-                    heightDimension: .estimated(280))
-                
-                let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
-                    layoutSize: groupSize,
-                    subitems: [item])
-                
-                let section = NSCollectionLayoutSection(group: group)
-                
-                return section
+                return self.createOrderSection()
             case .raiting:
                 return self.createRaitingSection()
             case .categories:
@@ -105,47 +81,7 @@ final class SelectView: UIView {
         }
     }
     
-//    private func createBannerSection() -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .fractionalHeight(1))
-//        
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        
-//        let groupSize = NSCollectionLayoutSize(
-//            widthDimension: .absolute(UIScreen.main.bounds.width ),
-//            heightDimension: .estimated(280))
-//        
-//        let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
-//            layoutSize: groupSize,
-//            subitems: [item])
-//        
-//        let section = NSCollectionLayoutSection(group: group)
-//        
-//        return section
-//    }
-    
-//    private func createOrderSection() -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .fractionalHeight(1))
-//        
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        
-//        let groupSize = NSCollectionLayoutSize(
-//            widthDimension: .absolute(UIScreen.main.bounds.width ),
-//            heightDimension: .estimated(280))
-//        
-//        let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
-//            layoutSize: groupSize,
-//            subitems: [item])
-//        
-//        let section = NSCollectionLayoutSection(group: group)
-//        
-//        return section
-//    }
-    
-    private func createRaitingSection() -> NSCollectionLayoutSection {
+    private func createBannerSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1))
@@ -154,7 +90,7 @@ final class SelectView: UIView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .absolute(UIScreen.main.bounds.width ),
-            heightDimension: .estimated(280))
+            heightDimension: .estimated(300))
         
         let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -165,7 +101,7 @@ final class SelectView: UIView {
         return section
     }
     
-    private func createCategoriesSection() -> NSCollectionLayoutSection {
+    private func createOrderSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1))
@@ -174,13 +110,67 @@ final class SelectView: UIView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .absolute(UIScreen.main.bounds.width ),
-            heightDimension: .estimated(280))
+            heightDimension: .estimated(80))
         
         let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
+        
+        return section
+    }
+    
+    private func createRaitingSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .absolute(100))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let item2 = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(100))
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item, item2])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    private func createCategoriesSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .absolute(150))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let item2 = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 15)
+        item2.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 15)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(150))
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item, item2])
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(100))
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header]
         
         return section
     }

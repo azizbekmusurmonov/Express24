@@ -11,7 +11,7 @@ import UIKit
 
 
 enum SectionType: Int, CaseIterable {
-    case banner 
+    case banner
     case story
     case market
     case shop

@@ -80,15 +80,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    // ...
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        isSelectTabBar = true
 
         tabBarItemsData = [
-            TabBarItemData(image: isSelectTabBar ? "ic_home" : "ic_home_yellow", 
+            TabBarItemData(image: isSelectTabBar ? "ic_home_yellow" : "ic_home" ,
                            title: "Bosh sahifa", type: HomeVC(presenter: HomePresenter())),
             TabBarItemData(image: isSelectTabBar ? "ic_search_yellow" : "ic_new_search",
                            title: "Izlash", type: SearchVC()),

@@ -341,6 +341,14 @@
 			path = ShopAndMarketSelectCell;
 			sourceTree = "<group>";
 		};
+		FA84CB9B2B7CDAF400E48048 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FA756D052B77F1EE00612FB4 /* SelectHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		FAB8EE212B6C757200229EA9 /* BannerSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,7 +436,7 @@
 				FAF28DA22B765451005A4F8B /* SelectViewController.swift */,
 				FAF28DA42B765464005A4F8B /* SelectPresenter.swift */,
 				FAF28DA62B765472005A4F8B /* SelectView.swift */,
-				FA756D052B77F1EE00612FB4 /* SelectHeaderView.swift */,
+				FA84CB9B2B7CDAF400E48048 /* Header */,
 			);
 			path = ShopAndMarketSelect;
 			sourceTree = "<group>";

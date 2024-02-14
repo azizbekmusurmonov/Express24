@@ -26,7 +26,6 @@ final class BannerSelectViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        
         bannerSelectView.collectionView.dataSource = self
         bannerSelectView.collectionView.delegate = self
                 
@@ -67,7 +66,7 @@ final class BannerSelectViewController: UIViewController {
 
 extension BannerSelectViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { SectionType.allCases.count  }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         presenter.numberOfItemsInSection(for: section)
@@ -76,6 +75,7 @@ extension BannerSelectViewController: UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         presenter.cellForRaw(collectionView: collectionView, at: indexPath)
     }
+    
     
     //MARK: header setUp
     func collectionView(
@@ -91,4 +91,3 @@ extension BannerSelectViewController: UICollectionViewDelegateFlowLayout, UIColl
         presenter.didSelectItem(collectionView, at: indexPath)
     }
 }
-

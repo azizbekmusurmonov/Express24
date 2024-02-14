@@ -33,6 +33,7 @@ final class SelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationItem.title = "Oshxona"
         
         selectView.collectionView.delegate = self
         selectView.collectionView.dataSource = self
@@ -48,6 +49,7 @@ final class SelectViewController: UIViewController {
             equalTo: view.trailingAnchor).isActive = true
         selectView.bottomAnchor.constraint(
             equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,9 +67,7 @@ final class SelectViewController: UIViewController {
 
 extension SelectViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
-    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { SelectShopSectionType.allCases.count }
     
     func collectionView(
         _ collectionView: UICollectionView,
@@ -80,12 +80,12 @@ extension SelectViewController: UICollectionViewDelegateFlowLayout, UICollection
         presenter.cellForRaw(collectionView: collectionView, at: indexPath)
     }
     
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        viewForSupplementaryElementOfKind kind: String,
-//        at indexPath: IndexPath) -> UICollectionReusableView {
-//            presenter.viewForSupplementaryElementOfKind(collectionView: collectionView,
-//                                                        kind: kind, at: indexPath)
-//        }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath) -> UICollectionReusableView {
+            presenter.viewForSupplementaryElementOfKind(collectionView: collectionView,
+                                                        kind: kind, at: indexPath)
+        }
     
 }
