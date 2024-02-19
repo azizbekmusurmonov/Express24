@@ -22,6 +22,7 @@ final class ProfileView: UIView {
         tableView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(InformationCell.self, forCellReuseIdentifier: "informationCell")
         tableView.register(CartAdressCell.self, forCellReuseIdentifier: "cartAdressCell")
         tableView.register(SettingCell.self, forCellReuseIdentifier: "settingCell")

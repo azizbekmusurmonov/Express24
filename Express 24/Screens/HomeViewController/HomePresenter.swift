@@ -102,8 +102,6 @@ final class HomePresenter: HomeViewPresenterable {
         }
     }
     
-    
-    
     //MARK: - Home Cells setUp
     func cellForRaw(collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         guard let sectionType = SectionType(rawValue: indexPath.section) else { return UICollectionViewCell()}

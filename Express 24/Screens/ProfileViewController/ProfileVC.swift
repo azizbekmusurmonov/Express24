@@ -23,6 +23,7 @@ final class ProfileVC: UIViewController {
         self.presenter = ProfilePresenter() // Corrected from OrdersPresenter
         
         super.init(nibName: nil, bundle: nil)
+        self.presenter.vc = self
     }
     
     required init?(coder: NSCoder) {
@@ -61,4 +62,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat { return 65 }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath, navigationController: navigationController)
+    }
 }

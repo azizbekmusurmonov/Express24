@@ -8,6 +8,7 @@
 import UIKit
 
 final class BannerSelectCell: UICollectionViewCell {
+    
     let cellView = UIView()
     let imageView = UIImageView()
     var shopNameLabel = UILabel()

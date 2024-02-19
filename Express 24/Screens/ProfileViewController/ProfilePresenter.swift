@@ -8,11 +8,19 @@
 import UIKit
 
 protocol ProfileViewPresenterable: AnyObject {
+    
+    var vc: ProfileVC! { get set }
+    
     func numberOfRowsInSection(for section: Int) -> Int
-    func cellForRaw(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
+    func cellForRaw(_ tableView: UITableView, 
+                    at indexPath: IndexPath) -> UITableViewCell
+    func didSelectRow(at indexPath: IndexPath, navigationController: UINavigationController?)
 }
 
 final class ProfilePresenter: ProfileViewPresenterable {
+        
+    weak var vc: ProfileVC!
+    
     func numberOfRowsInSection(for section: Int) -> Int {
         guard let sectionType = ProfileSectionType(rawValue: section) else { return 0 }
         
@@ -172,4 +180,118 @@ final class ProfilePresenter: ProfileViewPresenterable {
             return cell
         }
     }
+    
+    func didSelectRow(at indexPath: IndexPath, navigationController: UINavigationController?) {
+        guard let sectionType = ProfileSectionType(rawValue: indexPath.section
+        ) else { return }
+        switch sectionType {
+            
+        case .information:
+            if indexPath.row == 0 {
+                let informationVC = InformationVC()
+                navigationController?.pushViewController(informationVC, animated: true)
+            }
+        case .cartAdress:
+            if indexPath.row == 1 {
+            let cardVC = CardVC()
+                navigationController?.pushViewController(cardVC, animated: true)
+            } else if indexPath.row == 2 {
+                let myLocationVC = MyLocationVC()
+                navigationController?.pushViewController(myLocationVC, animated: true)
+            }
+        case .setting:
+            if indexPath.row == 1 {
+                let alertVC = UIAlertController(
+                    title: "Til",
+                    message: "",
+                    preferredStyle: .actionSheet)
+                
+                let rusAction = UIAlertAction(title: "Русский", style: .default) { UIAlertAction in
+                    print("Русский")
+                }
+                
+                let uzbekAction = UIAlertAction(title: "O’zbekcha", style: .default) { UIAlertAction in
+                    print("O’zbekcha")
+                }
+                
+                let englishAction = UIAlertAction(title: "English", style: .default) { UIAlertAction in
+                    print("english")
+                }
+                
+                let tasdiqlashAction = UIAlertAction(title: "Tasdiqlash", style: .cancel){ UIAlertAction in
+                    print("Tasdiqlandi")
+                }
+                alertVC.addAction(rusAction)
+                alertVC.addAction(uzbekAction)
+                alertVC.addAction(englishAction)
+                alertVC.addAction(tasdiqlashAction)
+                self.vc.present(alertVC, animated: true)
+            }
+        case .reference:
+            if indexPath.row == 1 {
+                let notificationsVC = NotificationsVC()
+                navigationController?.pushViewController(notificationsVC, animated: true)
+            } else if indexPath.row == 2 {
+                
+                let alertVC = UIAlertController(
+                    title: "Yordam xizmati",
+                    message: "",
+                    preferredStyle: .actionSheet)
+                
+                let sendMessageAction = UIAlertAction(title: "Xabar Yuborish", style: .default) { UIAlertAction in
+                    print("Xabar yuborish")
+                }
+                
+                let numberAction = UIAlertAction(title: "+998712004001", style: .default) { UIAlertAction in
+                    print("998712004001")
+                }
+                
+                alertVC.addAction(sendMessageAction)
+                alertVC.addAction(numberAction)
+                self.vc.present(alertVC, animated: true)
+                
+            } else if indexPath.row == 3 {
+                let termsOfUseVC = TermsOfUseVC()
+//                termsOfUseVC.modalPresentationStyle =
+                vc.present(termsOfUseVC, animated: true)
+            }
+        case .deleteAcc:
+            if indexPath.row == 0 {
+                let alertVC = UIAlertController(
+                    title: "",
+                    message: "Tizimdan chiqasizmi?",
+                    preferredStyle: .alert)
+                
+                let deleteAction = UIAlertAction(title: "Tasdiqlash", style: .destructive) { UIAlertAction in
+                    print("Accountingiz o'chib ketdi")
+                }
+                
+                let cancelAction = UIAlertAction(title: "Bekor qilish", style: .cancel) { UIAlertAction in
+                    print("Amal bekor qilindi")
+                }
+                
+                alertVC.addAction(deleteAction)
+                alertVC.addAction(cancelAction)
+                self.vc.present(alertVC, animated: true)
+            } else if indexPath.row == 1 {
+                let alertVC = UIAlertController(
+                    title: "",
+                    message: "O'chirish 30 kun davom etadi. Agar 30 kun ichida ushbu raqam bilan qayta ro'yxatdan o'tsangiz, u bekor qilinadi",
+                    preferredStyle: .alert)
+                
+                let deleteAction = UIAlertAction(title: "O'chirish", style: .destructive) { UIAlertAction in
+                    print("Accountingiz o'chib ketdi")
+                }
+                
+                let cancelAction = UIAlertAction(title: "Bekor qilish", style: .cancel) { UIAlertAction in
+                    print("Amal bekor qilindi")
+                }
+                
+                alertVC.addAction(deleteAction)
+                alertVC.addAction(cancelAction)
+                self.vc.present(alertVC, animated: true)
+            }
+        }
+    }
+
 }

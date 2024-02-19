@@ -11,6 +11,25 @@ enum SectionTypeHeader: Int, CaseIterable {
     case category = 0
 }
 
+enum HeaderTypeCategory: Int, CaseIterable {
+    case favorite
+    case aksiya
+    case new
+    case fastfood
+    case aziat
+    case cofeynya
+    case pizzeriya
+    case burgernaya
+    case evropes
+    case uzbeki
+    case turke
+    case barbeque
+    case desert
+    case product
+    case icecream
+    case pp
+}
+
 final class HomeSectionHeaderView: UICollectionReusableView {
     
     
@@ -21,6 +40,7 @@ final class HomeSectionHeaderView: UICollectionReusableView {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(HomeSectionHeaderViewCell.self, forCellWithReuseIdentifier: "homeSectionHeaderViewCell")
         
         return collectionView
     }()
@@ -50,7 +70,7 @@ final class HomeSectionHeaderView: UICollectionReusableView {
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(100),
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(120),
                                                        heightDimension: .absolute(28))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
@@ -125,16 +145,254 @@ extension HomeSectionHeaderView {
 extension HomeSectionHeaderView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        HeaderTypeCategory.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let sectionType = HeaderTypeCategory(rawValue: indexPath.row) else { return UICollectionViewCell()}
         
-        cell.backgroundColor = .rgb(240, 240, 251)
-        cell.layer.cornerRadius = 10
-        cell.clipsToBounds = true
-    
-        return cell
+        switch sectionType {
+            
+        case .favorite:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "❤️ Saralanganlar"
+            
+            return cell
+        case .aksiya:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Aksiya"
+            
+            return cell
+        case .new:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Yangi"
+            
+            return cell
+        case .fastfood:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Fast Food"
+            
+            return cell
+        case .aziat:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Aziat"
+            
+            return cell
+        case .cofeynya:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Cofe"
+            
+            return cell
+        case .pizzeriya:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Pizza"
+            
+            return cell
+        case .burgernaya:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Burger"
+            
+            return cell
+        case .evropes:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Yevropa"
+            
+            return cell
+        case .uzbeki:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Uzbekcha"
+            
+            return cell
+        case .turke:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Turkcha"
+            
+            return cell
+        case .barbeque:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "BBQ Burger"
+            
+            return cell
+        case .desert:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Desert"
+            
+            return cell
+        case .product:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Maxsulot"
+            
+            return cell
+        case .icecream:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "Muzqaymoq"
+            
+            return cell
+        case .pp:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "homeSectionHeaderViewCell",
+                for: indexPath
+            ) as? HomeSectionHeaderViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            cell.backgroundColor = .rgb(240, 240, 251)
+            cell.layer.cornerRadius = 10
+            cell.clipsToBounds = true
+            cell.nameLabel.text = "PP"
+            
+            return cell
+        }
     }
 }

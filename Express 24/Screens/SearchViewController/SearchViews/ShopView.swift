@@ -28,6 +28,7 @@ final class ShopView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.showsHorizontalScrollIndicator = false
     }
     
     private func setupConstraints() {
@@ -55,7 +56,7 @@ extension ShopView: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.isUserInteractionEnabled = true
         cell.titleLabel.text = "Do'konlar"
-        cell.shopImageView.image = UIImage(named: "")
+//        cell.shopImageView.image = UIImage(named: "")
         cell.imageNext.image = UIImage(named: "next")
        
         return cell
