@@ -9,12 +9,12 @@ import UIKit
 
 final class BannerImageCell: UICollectionViewCell {
     
-        let cellView = UIView()
-        let imageView = UIImageView()
-        var imageName = UILabel()
-        var minPrice = UILabel()
-        let likeButton = UIButton()
-        var isLiked = false
+    let cellView = UIView()
+    let imageView = UIImageView()
+    var imageName = UILabel()
+    var minPrice = UILabel()
+    let likeButton = UIButton()
+    var isLiked = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,11 +71,11 @@ final class BannerImageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-        @objc func buttonTapped() {
-    
-            isLiked.toggle()
-    
-            likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), for: .normal)
-            likeButton.tintColor = isLiked ? .red : .black
-        }
+    @objc func buttonTapped() {
+        
+        isLiked.toggle()
+        
+        likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), for: .normal)
+        likeButton.tintColor = isLiked ? .red : .black
+    }
 }

@@ -62,6 +62,15 @@ final class HomeView: UIView {
         return control
     }()
     
+    let pageController: UIPageControl = {
+        let pageControll = UIPageControl()
+        pageControll.currentPage = 0
+        pageControll.currentPageIndicatorTintColor = .black
+        pageControll.backgroundStyle = .prominent
+        
+        return pageControll
+    }()
+    
 
     init() {
         super.init(frame: .zero)

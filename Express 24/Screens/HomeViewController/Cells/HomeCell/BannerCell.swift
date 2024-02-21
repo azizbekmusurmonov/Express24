@@ -11,7 +11,7 @@ final class BannerCell: UICollectionViewCell {
     
     let cellView = UIView()
     let imageView = UIImageView()
-    
+    var index = 0
     private var imageIndex = 0
     private var imageTimer: Timer?
     private let imageSwitchingInterval: TimeInterval = 3.0
@@ -42,7 +42,8 @@ final class BannerCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
     }
     
-    func prepare(data: BannerModel) {
+    func prepare(data: BannerModel, index: Int) {
+        self.index = index
         if !data.imageUrl.isEmpty {
             self.imageNames = [data.imageUrl]
         } else {

@@ -10,7 +10,7 @@ import WebKit
 
 final class TermsOfUseVC: UIViewController {
    
-    let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ final class TermsOfUseVC: UIViewController {
         view.addGestureRecognizer(tappedBackview)
 
         view.addSubview(webView)
-        webView.loadRequest(URLRequest(url: URL(string: "https://apple.com")!))
+        webView.load(URLRequest(url: URL(string: "https://apple.com")!))
         
         
     }

@@ -31,7 +31,6 @@
 		FA6F39962B5EB1C300B868E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F39952B5EB1C300B868E2 /* Color.swift */; };
 		FA6F39982B5EB21900B868E2 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F39972B5EB21900B868E2 /* Constraint.swift */; };
 		FA6F399A2B5EB2DC00B868E2 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F39992B5EB2DC00B868E2 /* Application.swift */; };
-		FA6F399C2B5EB31900B868E2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F399B2B5EB31900B868E2 /* Home.swift */; };
 		FA6F39A02B5EB87F00B868E2 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F399F2B5EB87F00B868E2 /* HomeSectionHeaderView.swift */; };
 		FA756D062B77F1EE00612FB4 /* SelectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756D052B77F1EE00612FB4 /* SelectHeaderView.swift */; };
 		FA756D0B2B77F6A900612FB4 /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756D0A2B77F6A900612FB4 /* BannerImageCell.swift */; };
@@ -60,6 +59,10 @@
 		FAE312B62B558E6100D9DFDD /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE312B52B558E6100D9DFDD /* OrdersVC.swift */; };
 		FAE312B82B558E8A00D9DFDD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE312B72B558E8A00D9DFDD /* ProfileVC.swift */; };
 		FAE827E62B8371D500733392 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827E52B8371D500733392 /* TermsOfUseVC.swift */; };
+		FAE827E92B83BACB00733392 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827E82B83BACB00733392 /* StoriesView.swift */; };
+		FAE827F22B85FDE200733392 /* StoryBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F12B85FDE200733392 /* StoryBundle.swift */; };
+		FAE827F42B86040B00733392 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F32B86040B00733392 /* StoryViewModel.swift */; };
+		FAE827F62B860C9200733392 /* Storyview2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F52B860C9200733392 /* Storyview2.swift */; };
 		FAF28D9E2B76449D005A4F8B /* ViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28D9D2B76449D005A4F8B /* ViewControllerA.swift */; };
 		FAF28DA02B7644CC005A4F8B /* ViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28D9F2B7644CC005A4F8B /* ViewControllerB.swift */; };
 		FAF28DA32B765451005A4F8B /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28DA22B765451005A4F8B /* SelectViewController.swift */; };
@@ -125,7 +128,6 @@
 		FA6F39952B5EB1C300B868E2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA6F39972B5EB21900B868E2 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		FA6F39992B5EB2DC00B868E2 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		FA6F399B2B5EB31900B868E2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FA6F399F2B5EB87F00B868E2 /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
 		FA756D052B77F1EE00612FB4 /* SelectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHeaderView.swift; sourceTree = "<group>"; };
 		FA756D0A2B77F6A900612FB4 /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
@@ -156,6 +158,10 @@
 		FAE312B52B558E6100D9DFDD /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
 		FAE312B72B558E8A00D9DFDD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		FAE827E52B8371D500733392 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
+		FAE827E82B83BACB00733392 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		FAE827F12B85FDE200733392 /* StoryBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBundle.swift; sourceTree = "<group>"; };
+		FAE827F32B86040B00733392 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		FAE827F52B860C9200733392 /* Storyview2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyview2.swift; sourceTree = "<group>"; };
 		FAF28D9D2B76449D005A4F8B /* ViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerA.swift; sourceTree = "<group>"; };
 		FAF28D9F2B7644CC005A4F8B /* ViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
 		FAF28DA22B765451005A4F8B /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +319,6 @@
 				FA6F39952B5EB1C300B868E2 /* Color.swift */,
 				FA6F39972B5EB21900B868E2 /* Constraint.swift */,
 				FA6F39992B5EB2DC00B868E2 /* Application.swift */,
-				FA6F399B2B5EB31900B868E2 /* Home.swift */,
 				FA69734E2B67E9B000A22D7D /* UIImage.swift */,
 				FA6231E52B724E3000574074 /* UITableViewCell-extension.swift */,
 			);
@@ -433,6 +438,7 @@
 				FA6F39942B5EB0DC00B868E2 /* Extensions */,
 				FAE312AB2B55880600D9DFDD /* Base */,
 				FA6231E22B71ADD300574074 /* TabBar */,
+				FAE827E72B83BABB00733392 /* Stores */,
 				FAE312AC2B5588BC00D9DFDD /* Screens */,
 				FAE312A02B55878D00D9DFDD /* Assets.xcassets */,
 				FAE312A22B55878D00D9DFDD /* LaunchScreen.storyboard */,
@@ -459,6 +465,41 @@
 				FA6F39912B5B6A0400B868E2 /* ProfileViewController */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		FAE827E72B83BABB00733392 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				FAE827EC2B85EF0900733392 /* ViewModel */,
+				FAE827ED2B85EF3100733392 /* Model */,
+				FAE827EE2B85EF4300733392 /* View */,
+				FAE827E82B83BACB00733392 /* StoriesView.swift */,
+				FAE827F52B860C9200733392 /* Storyview2.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		FAE827EC2B85EF0900733392 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAE827F32B86040B00733392 /* StoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAE827ED2B85EF3100733392 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAE827F12B85FDE200733392 /* StoryBundle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAE827EE2B85EF4300733392 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FAF28D9C2B764470005A4F8B /* SegmentedViewControl */ = {
@@ -666,6 +707,7 @@
 			files = (
 				FAF28DA72B765472005A4F8B /* SelectView.swift in Sources */,
 				FA756D0B2B77F6A900612FB4 /* BannerImageCell.swift in Sources */,
+				FAE827E92B83BACB00733392 /* StoriesView.swift in Sources */,
 				FAB8EE232B6C75AB00229EA9 /* BannerSelectViewController.swift in Sources */,
 				FA6794002B6A461D00DDCB25 /* OrdersView.swift in Sources */,
 				FA84CBAD2B7FA3A300E48048 /* MyLocationVCCell.swift in Sources */,
@@ -684,6 +726,7 @@
 				FA6231EF2B72D10E00574074 /* CartAdressCell.swift in Sources */,
 				FA69734F2B67E9B000A22D7D /* UIImage.swift in Sources */,
 				FA6F39962B5EB1C300B868E2 /* Color.swift in Sources */,
+				FAE827F42B86040B00733392 /* StoryViewModel.swift in Sources */,
 				FAE827E62B8371D500733392 /* TermsOfUseVC.swift in Sources */,
 				FA7BB3462B828D5D00D709DD /* HomeSectionHeaderViewCell.swift in Sources */,
 				FA84CBA42B7E745D00E48048 /* NotificationsVC.swift in Sources */,
@@ -707,6 +750,7 @@
 				FAF28DA02B7644CC005A4F8B /* ViewControllerB.swift in Sources */,
 				FA6231E42B71AE4B00574074 /* TabBarViewController.swift in Sources */,
 				FA6793F62B6A3DCD00DDCB25 /* SearchPresenter.swift in Sources */,
+				FAE827F62B860C9200733392 /* Storyview2.swift in Sources */,
 				FAF878162B615E73006EF641 /* HomeModel.swift in Sources */,
 				FAE312982B55878B00D9DFDD /* AppDelegate.swift in Sources */,
 				FAF878102B611433006EF641 /* HomePresenter.swift in Sources */,
@@ -718,10 +762,10 @@
 				FA6F39A02B5EB87F00B868E2 /* HomeSectionHeaderView.swift in Sources */,
 				FAF878222B61FDC8006EF641 /* ShopModel.swift in Sources */,
 				FA756D062B77F1EE00612FB4 /* SelectHeaderView.swift in Sources */,
+				FAE827F22B85FDE200733392 /* StoryBundle.swift in Sources */,
 				FAF8781E2B61FD06006EF641 /* StoryModel.swift in Sources */,
 				FAF8781C2B6161CE006EF641 /* ShopCell.swift in Sources */,
 				FA6F39982B5EB21900B868E2 /* Constraint.swift in Sources */,
-				FA6F399C2B5EB31900B868E2 /* Home.swift in Sources */,
 				FAF485D12B582E22009C033F /* BannerCell.swift in Sources */,
 				FA6793F82B6A3E3000DDCB25 /* SearchView.swift in Sources */,
 				FA6231F32B72D13A00574074 /* ReferenceCell.swift in Sources */,
@@ -883,7 +927,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -940,7 +984,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

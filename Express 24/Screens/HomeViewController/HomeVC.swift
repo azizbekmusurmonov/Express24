@@ -19,7 +19,7 @@ enum SectionType: Int, CaseIterable {
 
 final class HomeVC: UIViewController {
     
-    private let mainView = HomeView()
+    let mainView = HomeView()
     private var presenter: HomeViewPresenterable
     
     init(presenter: HomeViewPresenterable) {
@@ -79,13 +79,40 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        guard let sectionType = SectionType(rawValue: indexPath.section) else { return }
+        switch sectionType {
+        case .banner:
+            
+            let indexies = collectionView.indexPathsForVisibleItems
+            var bannercell: BannerCell? = nil
+            
+            for cell in collectionView.visibleCells {
+                if cell.isKind(of: BannerCell.self) {
+                    bannercell = cell as? BannerCell
+                    break
+                }
+            }
+            
+            
+            if !indexies.isEmpty {
+                mainView.pageController.currentPage = bannercell?.index ?? .zero
+            }
+           
+        case .story:
+            
+            break
+        case .market:
+            break
+        case .shop:
+            break
+        }
+        
 //        presenter.willDisplay(collectionView: collectionView, at: indexPath)
     }
     
     func scrollToItem(at indexPath: IndexPath) {
-        mainView.collectionView.scrollToItem(at: indexPath, 
-                                             at: .centeredHorizontally,
-                                             animated: true)
+        mainView.collectionView.scrollToItem(at: indexPath,  at: .centeredHorizontally, animated: true)
     }
 }
 

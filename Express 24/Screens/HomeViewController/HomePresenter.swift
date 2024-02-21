@@ -4,7 +4,7 @@
 //
 //  Created by MacBook on 24/01/24.
 //
-
+import SwiftUI
 import UIKit
 
 protocol HomeViewPresenterable: AnyObject {
@@ -116,7 +116,7 @@ final class HomePresenter: HomeViewPresenterable {
                 
             }
             
-            cell.prepare(data: model.banner[indexPath.row])
+            cell.prepare(data: model.banner[indexPath.row], index: indexPath.item)
             
             return cell
         case .story:
@@ -169,7 +169,10 @@ final class HomePresenter: HomeViewPresenterable {
                                                                            animated: true)
             
         case .story:
-            break
+            let storyView = UIHostingController(rootView: StoriesView())
+            storyView.modalPresentationStyle = .automatic
+            
+            viewController?.present(storyView, animated: true)
         case .market:
             let selectedMarket = model.market[indexPath.row]
             
@@ -228,7 +231,7 @@ final class HomePresenter: HomeViewPresenterable {
                     ofKind: UICollectionView.elementKindSectionHeader,
                     withReuseIdentifier: "HomeBalanceReusableView",
                     for: indexPath)
-                
+                                
                 headerView.backgroundColor = .blue
                 return headerView
                 
@@ -263,15 +266,12 @@ final class HomePresenter: HomeViewPresenterable {
                 withReuseIdentifier: "footerView",
                 for: indexPath
             )
-            let pageControll = UIPageControl()
-            pageControll.currentPage = 0
-            pageControll.numberOfPages = model.banner.count
-            pageControll.addTarget(self, action: #selector(pageControllChanged), for: .valueChanged)
-            pageControll.currentPageIndicatorTintColor = .black
-            pageControll.backgroundStyle = .prominent
-            footerView.addSubview(pageControll)
-            pageControll.setConstraint(from: .xCenter, from: footerView)
-            pageControll.setConstraint(from: .yCenter, from: footerView)
+           
+            viewController?.mainView.pageController.numberOfPages = model.banner.count
+            viewController?.mainView.pageController.addTarget(self, action: #selector(pageControllChanged), for: .valueChanged)
+            footerView.addSubview(viewController?.mainView.pageController ?? UIView())
+            viewController?.mainView.pageController.setConstraint(from: .xCenter, from: footerView)
+            viewController?.mainView.pageController.setConstraint(from: .yCenter, from: footerView)
                         
             return footerView
         }
