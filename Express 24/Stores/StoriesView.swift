@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
- 
 
 struct StoriesView: View {
     
     @StateObject var storyData = StoryViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
@@ -44,26 +44,21 @@ struct StoriesView: View {
                                     
                                     ,alignment: .bottomTrailing
                                     
-                                    )
+                                )
                         }
                         .padding(.trailing, 10)
                         
-                        //stories 
+                        //stories
                         ForEach($storyData.stories) { $bundle in
                             //Profile View ...
                             
                             ProfileVieww(bundle: $bundle)
                                 .environmentObject(storyData)
                         }
-                        
-                        
-                        
-                        
                     }
                     .padding()
                     .padding(.top, 10)
                 }
-                
             }
             .navigationTitle("Express24")
         }
@@ -72,21 +67,23 @@ struct StoriesView: View {
                 .environmentObject(storyData)
         )
         
-//        .overlay(
-//        
-//            Button(action: {
-//                withAnimation {
-//                    storyData.showStory = false
-//                }
-//            }, label: {
-//                Image(systemName: "xmark")
-//                    .font(.title2)
-//                    .foregroundColor(.black)
-//            })
-//            .padding()
-//            
-//            ,alignment: .topTrailing
-//        )
+        .overlay(
+            
+            Button(action: {
+                withAnimation {
+                    withAnimation {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }, label: {
+                Image(systemName: "xmark")
+                    .font(.title2)
+                    .foregroundColor(.black)
+            })
+            .padding()
+            
+            ,alignment: .topTrailing
+        )
     }
 }
 
@@ -113,7 +110,7 @@ struct ProfileVieww: View {
         
             .padding(2)
             .background(scheme == .dark ? .black : .white, in:
-            Circle())
+                            Circle())
             .padding(3)
             .background(
                 
@@ -123,8 +120,8 @@ struct ProfileVieww: View {
                     .red,
                     .orange
                 ],
-                startPoint: .top,
-                endPoint: .bottom)
+                               startPoint: .top,
+                               endPoint: .bottom)
                 .clipShape(Circle())
                 .opacity(bundle.isSeen ? 0 : 1)
             )

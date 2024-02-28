@@ -27,6 +27,7 @@ final class MyLocationVCCell: UITableViewCell {
         locationName.translatesAutoresizingMaskIntoConstraints = false
         locationName.setConstraint(from: .left, from: cellView, 16)
         locationName.setConstraint(from: .yCenter, from: cellView)
+        locationName.setConstraint(from: .right, from: cellView, -40)
         
         cellView.addSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false

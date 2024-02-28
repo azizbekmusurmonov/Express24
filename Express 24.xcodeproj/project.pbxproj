@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3437342B8CC1930045344A /* MyLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3437332B8CC1930045344A /* MyLocationModel.swift */; };
+		FA3437362B8CC2950045344A /* MyLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3437352B8CC2950045344A /* MyLocationViewModel.swift */; };
 		FA61693F2B5665B10081F33B /* Express_24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61693E2B5665B10081F33B /* Express_24Tests.swift */; };
 		FA61694C2B5665C90081F33B /* Express_24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61694B2B5665C90081F33B /* Express_24UITests.swift */; };
 		FA61694E2B5665C90081F33B /* Express_24UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61694D2B5665C90081F33B /* Express_24UITestsLaunchTests.swift */; };
@@ -63,6 +65,8 @@
 		FAE827F22B85FDE200733392 /* StoryBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F12B85FDE200733392 /* StoryBundle.swift */; };
 		FAE827F42B86040B00733392 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F32B86040B00733392 /* StoryViewModel.swift */; };
 		FAE827F62B860C9200733392 /* Storyview2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F52B860C9200733392 /* Storyview2.swift */; };
+		FAE827FA2B8648F200733392 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827F92B8648F200733392 /* OrdersViewModel.swift */; };
+		FAE827FC2B8649AA00733392 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE827FB2B8649AA00733392 /* OrdersModel.swift */; };
 		FAF28D9E2B76449D005A4F8B /* ViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28D9D2B76449D005A4F8B /* ViewControllerA.swift */; };
 		FAF28DA02B7644CC005A4F8B /* ViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28D9F2B7644CC005A4F8B /* ViewControllerB.swift */; };
 		FAF28DA32B765451005A4F8B /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28DA22B765451005A4F8B /* SelectViewController.swift */; };
@@ -102,6 +106,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA3437332B8CC1930045344A /* MyLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationModel.swift; sourceTree = "<group>"; };
+		FA3437352B8CC2950045344A /* MyLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewModel.swift; sourceTree = "<group>"; };
 		FA61693C2B5665B10081F33B /* Express 24Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Express 24Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA61693E2B5665B10081F33B /* Express_24Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Express_24Tests.swift; sourceTree = "<group>"; };
 		FA6169492B5665C90081F33B /* Express 24UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Express 24UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +168,8 @@
 		FAE827F12B85FDE200733392 /* StoryBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBundle.swift; sourceTree = "<group>"; };
 		FAE827F32B86040B00733392 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		FAE827F52B860C9200733392 /* Storyview2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyview2.swift; sourceTree = "<group>"; };
+		FAE827F92B8648F200733392 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		FAE827FB2B8649AA00733392 /* OrdersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
 		FAF28D9D2B76449D005A4F8B /* ViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerA.swift; sourceTree = "<group>"; };
 		FAF28D9F2B7644CC005A4F8B /* ViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
 		FAF28DA22B765451005A4F8B /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +216,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA3437322B8CC16E0045344A /* MyLocationVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA84CBA12B7E6FE200E48048 /* MyLocationVC.swift */,
+				FA3437332B8CC1930045344A /* MyLocationModel.swift */,
+				FA3437352B8CC2950045344A /* MyLocationViewModel.swift */,
+			);
+			path = MyLocationVC;
+			sourceTree = "<group>";
+		};
 		FA61693D2B5665B10081F33B /* Express 24Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +313,8 @@
 			children = (
 				FAF28D9C2B764470005A4F8B /* SegmentedViewControl */,
 				FAE312B52B558E6100D9DFDD /* OrdersVC.swift */,
+				FAE827F92B8648F200733392 /* OrdersViewModel.swift */,
+				FAE827FB2B8649AA00733392 /* OrdersModel.swift */,
 				FA6793FD2B6A461000DDCB25 /* OrdersPresenter.swift */,
 				FA6793FF2B6A461D00DDCB25 /* OrdersView.swift */,
 			);
@@ -375,10 +395,10 @@
 		FA84CB9C2B7E699200E48048 /* ProfileSelectVC */ = {
 			isa = PBXGroup;
 			children = (
+				FA3437322B8CC16E0045344A /* MyLocationVC */,
 				FA84CBA72B7FA15000E48048 /* Cells */,
 				FA84CB9D2B7E6FB100E48048 /* InformationVC.swift */,
 				FA84CB9F2B7E6FC800E48048 /* CardVC.swift */,
-				FA84CBA12B7E6FE200E48048 /* MyLocationVC.swift */,
 				FA84CBA32B7E745D00E48048 /* NotificationsVC.swift */,
 				FAE827E52B8371D500733392 /* TermsOfUseVC.swift */,
 			);
@@ -744,9 +764,11 @@
 				FAF485CC2B57EAC7009C033F /* ShopView.swift in Sources */,
 				FA6793FE2B6A461000DDCB25 /* OrdersPresenter.swift in Sources */,
 				FA84CBA02B7E6FC800E48048 /* CardVC.swift in Sources */,
+				FA3437342B8CC1930045344A /* MyLocationModel.swift in Sources */,
 				FA6231F12B72D12500574074 /* SettingCell.swift in Sources */,
 				FAC042BB2B79274D00EB330F /* ShopSelectModel.swift in Sources */,
 				FA6793F02B6A3C6300DDCB25 /* AllViewCell.swift in Sources */,
+				FAE827FA2B8648F200733392 /* OrdersViewModel.swift in Sources */,
 				FAF28DA02B7644CC005A4F8B /* ViewControllerB.swift in Sources */,
 				FA6231E42B71AE4B00574074 /* TabBarViewController.swift in Sources */,
 				FA6793F62B6A3DCD00DDCB25 /* SearchPresenter.swift in Sources */,
@@ -766,12 +788,14 @@
 				FAF8781E2B61FD06006EF641 /* StoryModel.swift in Sources */,
 				FAF8781C2B6161CE006EF641 /* ShopCell.swift in Sources */,
 				FA6F39982B5EB21900B868E2 /* Constraint.swift in Sources */,
+				FA3437362B8CC2950045344A /* MyLocationViewModel.swift in Sources */,
 				FAF485D12B582E22009C033F /* BannerCell.swift in Sources */,
 				FA6793F82B6A3E3000DDCB25 /* SearchView.swift in Sources */,
 				FA6231F32B72D13A00574074 /* ReferenceCell.swift in Sources */,
 				FA6793F22B6A3CB200DDCB25 /* RestaurantViewCell.swift in Sources */,
 				FADFD0102B6CE83200417E93 /* BannerSelectCell.swift in Sources */,
 				FA6231ED2B72D0EE00574074 /* InformationCell.swift in Sources */,
+				FAE827FC2B8649AA00733392 /* OrdersModel.swift in Sources */,
 				FA6793F42B6A3CC000DDCB25 /* ShopViewCell.swift in Sources */,
 				FA84CBA92B7FA16500E48048 /* CardVCCell.swift in Sources */,
 				FAF878142B615CBA006EF641 /* BannerModel.swift in Sources */,

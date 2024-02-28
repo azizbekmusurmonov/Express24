@@ -23,8 +23,7 @@ class StoryViewModel: ObservableObject {
             //Story(imageURL: "story1"),
             Story(imageURL: "Azizbekjon"),
         
-        ])
-    
+        ]),
     ]
     
     @Published var showStory: Bool = false

@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import Combine
 
 final class MyLocationVC: UIViewController {
     
     private let tableView = UITableView()
+    private let animator = UIActivityIndicatorView(style: .large)
+    
+    private let viewModel = MyLocationViewModel()
+    private var cancellables = Set<AnyCancellable>()
+    
+    var data: [MyLocationModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +32,20 @@ final class MyLocationVC: UIViewController {
         
         //MARK: - functions
         setUpTableView()
+        
+        view.addSubview(animator)
+        
+        animator.center = view.center
+        animator.startAnimating()
+        
+        
+        viewModel.$location.sink { recivedModel in
+            self.data = recivedModel
+            self.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                self.animator.stopAnimating()
+            }
+        }.store(in: &cancellables)
     }
     
     @objc private func leftButtonTapped() {
@@ -60,7 +81,7 @@ final class MyLocationVC: UIViewController {
 }
 
 extension MyLocationVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 1 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { data.count + 1 }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
@@ -68,12 +89,26 @@ extension MyLocationVC: UITableViewDelegate, UITableViewDataSource {
             for: indexPath
         ) as? MyLocationVCCell else {
             return UITableViewCell()
-            
         }
-        cell.locationName.text = "Yunusobod tumani, Amir Temur Shoh ko'chasi"
-        cell.image.image = UIImage(named: "edit_phone")
+        
+        // Check if the index is within the bounds of the data array
+        if indexPath.row < data.count {
+            // Access the element from the data array
+            let location = data[indexPath.row]
+            
+            // Configure the cell with location data
+//            cell.locationName.text = "Yunusobod tumani, Amir Temur Shoh ko'chasi"
+            cell.image.image = UIImage(named: "edit_phone")
+            cell.textLabel?.text = location.name
+            cell.detailTextLabel?.text = location.username
+        } else {
+            // Handle the case when the index is out of bounds
+            print("Index out of range for indexPath: \(indexPath)")
+        }
+        
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 100 }
 }

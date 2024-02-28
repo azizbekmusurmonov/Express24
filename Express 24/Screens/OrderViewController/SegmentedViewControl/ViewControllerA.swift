@@ -9,43 +9,39 @@ import UIKit
 
 final class ViewControllerA: UIViewController {
     
-    private let imageView = UIView()
-    private var imageLabel = UILabel()
-    private var imageTagLabel = UILabel()
-    private let imageEmpty = UIImageView()
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray6
         
-        view.addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.setConstraint(from: .left, from: view, 60)
-        imageView.setConstraint(from: .right, from: view, -60)
-        imageView.setConstraint(from: .top, from: view, 140)
-        imageView.setConstraint(from: .bottom, from: view, -140)
-        imageView.backgroundColor = .white
-        imageView.layer.cornerRadius = 10
-
-        imageView.addSubview(imageLabel)
-        imageLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageLabel.setConstraint(from: .top, from: imageView, 16)
-        imageLabel.setConstraint(from: .xCenter, from: view)
-        imageLabel.text = "Ro'yxat bo'sh"
-        imageLabel.font = .systemFont(ofSize: 25)
+        view.addSubview(tableView)
         
-        imageView.addSubview(imageTagLabel)
-        imageTagLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageTagLabel.topAnchor.constraint(equalTo: imageLabel.bottomAnchor, constant: 5).isActive = true
-        imageTagLabel.setConstraint(from: .xCenter, from: view)
-        imageTagLabel.text = "Faol buyurtmalar mavjud emas"
-        imageTagLabel.textColor = .rgb(175, 175, 175)
-        imageLabel.font = .systemFont(ofSize: 20)
+        tableView.setConstraint(from: .top, from: view)
+        tableView.setConstraint(from: .left, from: view)
+        tableView.setConstraint(from: .right, from: view)
+        tableView.setConstraint(from: .bottom, from: view)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        imageView.addSubview(imageEmpty)
-        imageEmpty.translatesAutoresizingMaskIntoConstraints = false
-        imageEmpty.setConstraint(from: .yCenter, from: imageView, 10)
-        imageEmpty.setConstraint(from: .xCenter, from: imageView)
-        imageEmpty.image = UIImage(named: "empty_bag")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
+}
+
+
+extension ViewControllerA: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: String(describing: "cell"))
+            cell.textLabel?.text = "tableContent[indexPath.row]"
+            cell.detailTextLabel?.text = "tableDetailContent[indexPath.row]"
+
+        
+        return cell
+    }
+    
+    
 }

@@ -170,7 +170,7 @@ final class HomePresenter: HomeViewPresenterable {
             
         case .story:
             let storyView = UIHostingController(rootView: StoriesView())
-            storyView.modalPresentationStyle = .automatic
+            storyView.modalPresentationStyle = .fullScreen
             
             viewController?.present(storyView, animated: true)
         case .market:
